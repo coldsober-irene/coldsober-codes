@@ -1,0 +1,14 @@
+import os
+# shuting down your computer
+def shutdown():
+    os.system("shutdown /s")
+    
+# restart your pc
+def restart():
+    os.system("shutdown /r")
+
+# show choices btn shutting down & restartyour computer
+def show_gui():
+    os.system("shutdown /i")
+
+# then call each function accordingly
