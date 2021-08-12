@@ -1,0 +1,19 @@
+z = [" " for i in range(20)]
+z[0] = "*"
+z[-1] = "*"
+z[10] = "*"
+w = ["*" for i in range(20)]
+q = ""
+r = ""
+
+for i in z:
+    q += i
+
+for i in w:
+    r += i
+
+for i in range(4):
+    if i == 0 or i == 3:
+        print(r)
+    else:
+        print(q)
