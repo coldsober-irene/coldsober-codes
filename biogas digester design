@@ -1,0 +1,60 @@
+from math import pow
+print("key terms involved in design of biogas digester")
+print()
+VC = ["volume of gas collecting chamber", "volume of gas  storage chamber", "volume of fermentation chamber", "volume of slag layer"]
+v2 = ["VC","VGs", "Vf","Vs"]
+
+index = 0
+for defs in VC:
+    print(f"{v2[index]} : {defs}")
+    index += 1
+print()
+
+print("Total volume of digester  =  VC + Vgs + Vf + Vs")
+print()
+
+print("design assumptions ")
+print("Average temperature of each cow = 30˚C")
+print("let HRT (Hydraulic Retention time) = 40 days(for temperature = 30˚C)")
+weights = [200,150, 250, 300, 180]
+print(f"number of cows = 5\nbody weight of each cow = {weights}")
+print("assume a cow of body weight of 200 kg produce 10 kg of dung")
+daily_dang = 0
+for i in range(1, len(weights)):
+    print(f"a cow of {weights[i]} will produce {round(weights[i] / 20, 2)} kg of dung")
+    daily_dang += round(weights[i] / 20, 2)
+print(f"total discharge = {daily_dang} kgs")
+print(f"TS (total solid of fresh discharge) = total discharge * 0.16 = {daily_dang * 0.16} KGS")
+print("In 8% concentration of TS (to make favourable condition)")
+print("8 kg. solid = 100kg influnt")
+print("1 kg. solid = 100 / 8 = ", round((100 / 8), 2))
+print(f"7.04 kg. solid = 7.04 * 12.5 = {round((7.04 * 12.5), 2)} influent")
+print(f"Now, the required influent = {round((7.04 * 12.5), 2)} kg")
+print()
+print(f"Water to be added to make discharge of 8% concentration of TS = {round((7.04 * 12.5), 2)} kg - {daily_dang} kg = {round((7.04 * 12.5), 2) - daily_dang} kg")
+print(f"working volume of digester = Vgs + Vf\nor \nQ * HRT\n= {round((7.04 * 12.5), 2)}/day * 40 days\n= {round((7.04 * 12.5), 2) * 40} kgs")
+print(f"since 1000kgs = m3 (cubic metre), then {round((7.04 * 12.5), 2) * 40} = {round((7.04 * 12.5), 2) * 40 / 1000} m3")
+print()
+print(f"From geometrical assumption\nVgs + Vf = 0.8V\nOr\nV = {round(((round((7.04 * 12.5), 2) * 40 / 1000) / 0.8), 2)} m3 (Putting value of Vgs + Vf = {round(((round((7.04 * 12.5), 2) * 40 / 1000) / 0.8), 2)} m3)")
+V = round(((round((7.04 * 12.5), 2) * 40 / 1000) / 0.8), 2)
+d = round((1.3078 * pow(round(((round((7.04 * 12.5), 2) * 40 / 1000) / 0.8), 2), (1 / 3))), 2)
+print(f"and D = 1.3078v^(1/3) = {round((1.3078 * pow(round(((round((7.04 * 12.5), 2) * 40 / 1000) / 0.8), 2), (1 / 3))), 2)} m")
+print(f"Again\nV3 = (3.14 * D^2 * H ) / 4\n(Putting V3 = 0.3142D^3)\nOr\nH = (4 * 0.3142 * D^3) / 3.14 * D^2\n= {round(((4 * 0.3142 * pow(d,3)) / (3.14 * d**2)), 2)} m")
+print()
+print("Now, we find from assumption as we know the value of D & H")
+print(f"f1 = D / 5 = {round((d / 5), 2)} m")
+print(f"f2 = D / 8 = {round((d / 8), 2)} m")
+print(f"R1 = 0.725 * D = {round((0.725 * d), 2)} m")
+print(f"R2 = 1.0625 * D = {round((1.0625 * d), 2)} m")
+print(f"V1 = 0.0827 * D^3 = {round((0.0827 * pow(d,3)), 2)} m3")
+print(f"Vc = 0.05V = {round((0.05 * V), 2)} m3")
+
+
+
+
+
+
+
+
+
+
